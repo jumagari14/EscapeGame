@@ -3,8 +3,8 @@ function setupListeners(){
 }
 
 function startGame(){
-	getById("intro").style.display="none";
-	getById("game").style.display="block";
+	hideObject("intro");
+	showObject("game");
 
 }
 
@@ -31,6 +31,15 @@ function callReceptionist(){
 		getById("game").appendChild(recept);
 	}
 	
+}
+
+function deskGame(){
+	let coordinates=getClickPosition(event);
+	console.log(coordinates);
+	if (543<=coordinates[0] && coordinates[0]<=785 && 455<=coordinates[1] && 581>=coordinates[1]){
+		spyonLaptop();
+	}
+
 }
 
 function spyonLaptop(){
